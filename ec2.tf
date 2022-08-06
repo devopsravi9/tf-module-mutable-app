@@ -21,6 +21,7 @@ resource "aws_ec2_tag" "example" {
 }
 
 resource "null_resource" "ansible" {
+  count = var.INSTANCE_COUNT
   provisioner "remote-exec" {
     connection {
       user     = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["SSH_USER"]
