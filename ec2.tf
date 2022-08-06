@@ -23,6 +23,7 @@ resource "aws_ec2_tag" "example" {
 resource "null_resource" "ansible" {
   provisioner "remote-exec" {
     connection {
+      count = var.INSTANCE_COUNT
       user = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["SSH_USER"]
       password = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["SSH_PASS"]
       host = aws_spot_instance_request.instance.*.private_ip[count.index]
