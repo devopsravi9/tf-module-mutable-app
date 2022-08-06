@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "target-group" {
-  name     = "${local.TAG_PREFIX}-target-group"
+  name     = "${local.TAG_PREFIX}"
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.VPC_ID
