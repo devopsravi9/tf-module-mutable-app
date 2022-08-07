@@ -3,5 +3,5 @@ resource "aws_route53_record" "public" {
   name    = "${var.COMPONENT}-${var.ENV}"
   type    = "CNAME"
   ttl     = 300
-  records = var.PRIVATE_LB_DNS
+  records = [var.PRIVATE_LB_DNS]
 }
