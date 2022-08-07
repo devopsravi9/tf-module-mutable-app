@@ -29,7 +29,7 @@ resource "null_resource" "ansible" {
       host     = aws_spot_instance_request.instance.*.private_ip[count.index]
     }
     inline = [
-      "ansible-pull -U https://github.com/devopsravi9/roboshop-ansible.git roboshop.yml -e HOST=localhost -e ROLE=${var.COMPONENT} -e ENV=${var.ENV} -e DOCDB_ENDPOINT=${var.DOCDB_ENDPOINT}"
+      "ansible-pull -U https://github.com/devopsravi9/roboshop-ansible.git roboshop.yml -e HOST=localhost -e ROLE=${var.COMPONENT} -e ENV=${var.ENV} -e DOCDB_ENDPOINT=${var.DOCDB_ENDPOINT} -e REDDIS_ENDPOINT=${var.REDDIS_ENDPOINT}"
     ]
 
   }
