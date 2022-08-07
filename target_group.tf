@@ -51,7 +51,7 @@ resource "aws_lb_listener_rule" "backend" {
 
   condition {
     host_header {
-      values = "${var.COMPONENT}-${var.ENV}.roboshop.internal"
+      values = ["${var.COMPONENT}-${var.ENV}.roboshop.internal"]
     }
   }
 }
