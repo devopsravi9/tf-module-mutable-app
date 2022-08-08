@@ -19,3 +19,6 @@ variable "DOCDB_ENDPOINT" {
 variable "REDDIS_ENDPOINT" {
   default = "null"
 }
+variable "MYSQL_ENDPOINT" {
+  default = "null"
+}
