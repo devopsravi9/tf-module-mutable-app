@@ -12,7 +12,7 @@ resource "aws_security_group" "main" {
   }
 
   ingress {
-    description      = "SSH"
+    description      = "workstation"
     from_port        = 22
     to_port          = 22
     protocol         = "TCP"
